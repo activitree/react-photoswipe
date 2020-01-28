@@ -1,8 +1,8 @@
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
 
-const ENV = process.env.NODE_ENV || 'development';
-const PROD = ENV === 'production';
+const ENV = process.env.NODE_ENV || 'development'
+const PROD = ENV === 'production'
 
 const plugins = [
   autoprefixer({
@@ -10,7 +10,7 @@ const plugins = [
       'last 2 versions'
     ]
   })
-];
+]
 
 if (PROD) {
   plugins.push(cssnano({
@@ -18,9 +18,9 @@ if (PROD) {
     discardComments: {
       removeAll: true
     }
-  }));
+  }))
 }
 
 module.exports = {
   plugins
-};
+}
